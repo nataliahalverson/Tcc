@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início - Viagem de Formatura</title>
+  <link rel="stylesheet" href="estilos/inicio.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <h1>FORMA+</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="inicio.html">Início</a></li>
+        <li><a href="pacotes.html">Pacotes</a></li>
+        <li><a href="roteiro.html">Roteiro</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Carrossel de Imagens -->
+  <section class="carousel">
+    <div class="carousel-container">
+      <div class="slide active">
+        <img src="imagens/imagem1.jpg" alt="Imagem de Florianópolis">
+      </div>
+      <div class="slide">
+        <img src="imagens/imagem2.jpeg" alt="Imagem do Beto Carrero">
+      </div>
+      <div class="slide">
+        <img src="imagens/imagem3.jpg" alt="Imagem de Porto Seguro">
+      </div>
+      <div class="slide">
+        <img src="imagens/imagem4.jpg" alt="Imagem da festa">
+      </div>
+
+      <button class="prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+
+  <!-- Seção principal -->
+  <main>
+    <section class="intro">
+      <h2>Bem-vindo à Viagem de Formatura</h2>
+      <p>Escolha o melhor destino para a sua formatura! Temos pacotes incríveis para Porto Seguro e Florianópolis.</p>
+      <a href="pacotes.html" class="btn">Veja os Pacotes</a>
+    </section>
+
+    <section class="destinos">
+      <div class="destino">
+        <h4>Porto Seguro</h4>
+        <p>Conheça as praias paradisíacas de Porto Seguro e faça uma viagem inesquecível com sua turma!</p>
+        <a href="pacotes.html" class="btn">Saiba Mais</a>
+      </div>
+      <div class="destino">
+        <h4>Florianópolis</h4>
+        <p>Descubra as belezas de Florianópolis, com suas praias, festas e muito mais!</p>
+        <a href="pacotes.html" class="btn">Saiba Mais</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Viagem de Formatura. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script do Carrossel -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    next.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+
+    prev.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+  </script>
+</body>
+</html>
