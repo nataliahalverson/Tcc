@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato - Viagem de Formatura</title>
   <link rel="stylesheet" href="estilos/contato.css">
-
-
 </head>
 <body>
+
   <!-- Header -->
   <header>
     <div class="logo">
@@ -28,25 +27,32 @@
   <!-- Main Section -->
   <main>
     <section class="contato">
-      <h2>Entre em Contato Conosco</h2>
-      <p>Se tiver alguma dúvida ou precisar de mais informações, preencha o formulário abaixo e entraremos em contato com você!</p>
-      
+      <h2>Entre em Contato</h2>
+      <p>Preencha o formulário e retornaremos o mais breve possível.</p>
+
       <form action="contato.php" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
 
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <div class="form-group">
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+        </div>
 
         <button type="submit">Enviar</button>
       </form>
-      
-      <h3>Ou entre em contato diretamente:</h3>
-      <p><strong>Email:</strong> suporte@viagemdeformatura.com.br</p>
-      <p><strong>Telefone:</strong> (11) 1234-5678</p>
+
+      <div class="contato-info">
+        <p><strong>Email:</strong> suporte@viagemdeformatura.com.br</p>
+        <p><strong>Telefone:</strong> (11) 1234-5678</p>
+      </div>
     </section>
   </main>
 
@@ -54,5 +60,6 @@
   <footer>
     <p>&copy; 2025 Viagem de Formatura. Todos os direitos reservados.</p>
   </footer>
+
 </body>
 </html>

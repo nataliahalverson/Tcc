@@ -1,7 +1,5 @@
-/* Importando fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-/* Reset básico de estilo */
 * {
   margin: 0;
   padding: 0;
@@ -9,16 +7,15 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Estilos do corpo */
 body {
   background-color: #f2f2f2;
   color: #333;
   line-height: 1.6;
 }
 
-/* Estilo do Header */
+/* Header */
 header {
-  background-color: #005f87; /* Azul */
+  background-color: #005f87;
   color: #fff;
   padding: 20px 40px;
   display: flex;
@@ -32,14 +29,14 @@ header .logo h1 {
   font-size: 36px;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #ffcc00; /* Amarelo */
+  color: #ffcc00;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para dar destaque */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   transition: color 0.3s ease;
 }
 
 header .logo h1:hover {
-  color: #ff9900; /* Amarelo mais intenso no hover */
+  color: #ff9900;
 }
 
 header nav ul {
@@ -62,14 +59,14 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  color: #ffcc00; /* Amarelo */
+  color: #ffcc00;
   transform: scale(1.1);
 }
 
-/* Estilo da seção principal */
+/* Conteúdo principal */
 main {
   padding: 80px 20px 40px;
-  background: linear-gradient(to bottom, #005f87, #003b58); /* Azul degradê */
+  background: linear-gradient(to bottom, #005f87, #003b58);
   color: #fff;
   display: flex;
   justify-content: center;
@@ -94,28 +91,11 @@ main {
   color: #ddd;
 }
 
-.intro .btn {
-  padding: 15px 35px;
-  background-color: #ffcc00; /* Amarelo */
-  color: #003b58; /* Azul escuro */
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.intro .btn:hover {
-  background-color: #ff9900; /* Amarelo mais intenso */
-  transform: scale(1.05);
-}
-
-/* Estilo da seção de Destinos */
 .destinos {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 60px;
+  flex-wrap: wrap;
 }
 
 .destino {
@@ -124,7 +104,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 45%;
+  width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -137,19 +117,19 @@ main {
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 15px;
-  color: #005f87; /* Azul */
+  color: #005f87;
 }
 
 .destino p {
   font-size: 16px;
   color: #666;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .destino .btn {
   padding: 12px 30px;
-  background-color: #ffcc00; /* Amarelo */
-  color: #003b58; /* Azul escuro */
+  background-color: #ffcc00;
+  color: #003b58;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
@@ -158,13 +138,13 @@ main {
 }
 
 .destino .btn:hover {
-  background-color: #ff9900; /* Amarelo mais intenso */
+  background-color: #ff9900;
   transform: scale(1.05);
 }
 
-/* Estilo do Footer */
+/* Footer */
 footer {
-  background-color: #003b58; /* Azul escuro */
+  background-color: #003b58;
   color: #fff;
   text-align: center;
   padding: 20px 0;
@@ -175,15 +155,15 @@ footer p {
   font-size: 14px;
 }
 
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
   .destinos {
-    flex-direction: column; /* Coloca as caixas em uma coluna */
+    flex-direction: column;
     align-items: center;
   }
 
   .destino {
-    width: 80%; /* Torna as caixas mais estreitas em telas menores */
-    margin-bottom: 20px; /* Adiciona um pequeno espaço entre as caixas */
+    width: 80%;
+    margin-bottom: 20px;
   }
 }

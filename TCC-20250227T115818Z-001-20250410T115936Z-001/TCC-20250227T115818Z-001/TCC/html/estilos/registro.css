@@ -1,7 +1,5 @@
-/* Importando fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-/* Reset básico de estilo */
 * {
   margin: 0;
   padding: 0;
@@ -9,181 +7,132 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Estilos do corpo */
 body {
   background-color: #f2f2f2;
   color: #333;
-  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Estilo do Header */
+/* Header */
 header {
-  background-color: #005f87; /* Azul */
-  color: #fff;
+  background-color: #005f87;
+  color: white;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .logo h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: 700;
-  letter-spacing: 2px;
-  color: #ffcc00; /* Amarelo */
+  color: #ffcc00;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para dar destaque */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   transition: color 0.3s ease;
 }
 
 header .logo h1:hover {
-  color: #ff9900; /* Amarelo mais intenso no hover */
+  color: #ff9900;
 }
 
-header nav ul {
-  list-style-type: none;
+nav ul {
+  list-style: none;
   display: flex;
+  gap: 20px;
 }
 
-header nav ul li {
-  margin-left: 30px;
-}
-
-header nav ul li a {
-  color: #fff;
+nav a {
+  color: white;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
 }
 
-header nav ul li a:hover {
-  color: #ffcc00; /* Amarelo */
-  transform: scale(1.1);
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* Estilo da seção principal */
+/* Formulário de Registro */
 main {
-  padding: 80px 20px 40px;
-  background: linear-gradient(to bottom, #005f87, #003b58); /* Azul degradê */
-  color: #fff;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #005f87, #003b58);
 }
 
-.intro {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.intro h2 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.intro p {
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: #ddd;
-}
-
-.intro .btn {
-  padding: 15px 35px;
-  background-color: #ffcc00; /* Amarelo */
-  color: #003b58; /* Azul escuro */
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.intro .btn:hover {
-  background-color: #ff9900; /* Amarelo mais intenso */
-  transform: scale(1.05);
-}
-
-/* Estilo da seção de Destinos */
-.destinos {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.destino {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 8px;
+.form-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 100%;
   text-align: center;
-  width: 45%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.destino:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.destino h4 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #005f87; /* Azul */
-}
-
-.destino p {
-  font-size: 16px;
-  color: #666;
+.form-box h2 {
+  font-size: 26px;
   margin-bottom: 25px;
+  color: #005f73;
 }
 
-.destino .btn {
-  padding: 12px 30px;
-  background-color: #ffcc00; /* Amarelo */
-  color: #003b58; /* Azul escuro */
-  text-decoration: none;
-  font-size: 14px;
+.form-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-box label {
+  text-align: left;
   font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.destino .btn:hover {
-  background-color: #ff9900; /* Amarelo mais intenso */
-  transform: scale(1.05);
+.form-box input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
-/* Estilo do Footer */
-footer {
-  background-color: #003b58; /* Azul escuro */
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 60px;
+.form-box button {
+  background-color: #008891;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-footer p {
+.form-box button:hover {
+  background-color: #005f73;
+}
+
+.form-box p {
+  margin-top: 20px;
   font-size: 14px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .destinos {
-    flex-direction: column; /* Coloca as caixas em uma coluna */
-    align-items: center;
-  }
+.form-box a {
+  color: #005f73;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  .destino {
-    width: 80%; /* Torna as caixas mais estreitas em telas menores */
-    margin-bottom: 20px; /* Adiciona um pequeno espaço entre as caixas */
-  }
+.form-box a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #003b58;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
 }

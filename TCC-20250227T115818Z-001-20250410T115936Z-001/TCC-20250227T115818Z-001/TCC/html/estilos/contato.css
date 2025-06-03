@@ -1,7 +1,5 @@
-/* Importando fonte do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
-/* Reset básico de estilo */
 * {
   margin: 0;
   padding: 0;
@@ -9,181 +7,125 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Estilos do corpo */
 body {
   background-color: #f2f2f2;
   color: #333;
-  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Estilo do Header */
+/* Header */
 header {
-  background-color: #005f87; /* Azul */
-  color: #fff;
+  background-color: #005f87;
+  color: white;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header .logo h1 {
+.logo h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #ffcc00; /* Amarelo */
+  color: #ffcc00;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave para dar destaque */
-  transition: color 0.3s ease;
 }
 
-header .logo h1:hover {
-  color: #ff9900; /* Amarelo mais intenso no hover */
-}
-
-header nav ul {
-  list-style-type: none;
+nav ul {
   display: flex;
+  list-style: none;
+  gap: 20px;
 }
 
-header nav ul li {
-  margin-left: 30px;
-}
-
-header nav ul li a {
-  color: #fff;
+nav a {
+  color: white;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: bold;
 }
 
-header nav ul li a:hover {
-  color: #ffcc00; /* Amarelo */
-  transform: scale(1.1);
+nav a:hover {
+  text-decoration: underline;
 }
 
-/* Estilo da seção principal */
+/* Main */
 main {
-  padding: 80px 20px 40px;
-  background: linear-gradient(to bottom, #005f87, #003b58); /* Azul degradê */
-  color: #fff;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  padding: 60px 20px;
 }
 
-.intro {
+.contato {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.contato h2 {
+  font-size: 28px;
+  color: #005f87;
+  margin-bottom: 10px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
-.intro h2 {
-  font-size: 48px;
-  font-weight: 700;
+.contato p {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.form-group {
   margin-bottom: 20px;
 }
 
-.intro p {
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: #ddd;
-}
-
-.intro .btn {
-  padding: 15px 35px;
-  background-color: #ffcc00; /* Amarelo */
-  color: #003b58; /* Azul escuro */
-  text-decoration: none;
-  font-size: 18px;
+label {
+  display: block;
   font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 6px;
 }
 
-.intro .btn:hover {
-  background-color: #ff9900; /* Amarelo mais intenso */
-  transform: scale(1.05);
-}
-
-/* Estilo da seção de Destinos */
-.destinos {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin-top: 60px;
-}
-
-.destino {
-  background-color: #fff;
-  padding: 30px;
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 45%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.destino:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.destino h4 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #005f87; /* Azul */
-}
-
-.destino p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 25px;
-}
-
-.destino .btn {
-  padding: 12px 30px;
-  background-color: #ffcc00; /* Amarelo */
-  color: #003b58; /* Azul escuro */
-  text-decoration: none;
   font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #008891;
+  color: white;
+  border: none;
+  border-radius: 8px;
   font-weight: bold;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.destino .btn:hover {
-  background-color: #ff9900; /* Amarelo mais intenso */
-  transform: scale(1.05);
+button:hover {
+  background-color: #005f73;
 }
 
-/* Estilo do Footer */
-footer {
-  background-color: #003b58; /* Azul escuro */
-  color: #fff;
+.contato-info {
+  margin-top: 30px;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 60px;
-}
-
-footer p {
   font-size: 14px;
+  color: #444;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .destinos {
-    flex-direction: column; /* Coloca as caixas em uma coluna */
-    align-items: center;
-  }
-
-  .destino {
-    width: 80%; /* Torna as caixas mais estreitas em telas menores */
-    margin-bottom: 20px; /* Adiciona um pequeno espaço entre as caixas */
-  }
+/* Footer */
+footer {
+  background-color: #003b58;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
 }
