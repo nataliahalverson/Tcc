@@ -1,13 +1,9 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import styles from './page.module.css'
-
-export const metadata: Metadata = {
-  title: 'Roteiro — Viagem de Formatura',
-  description: 'Confira o roteiro detalhado de cada dia da viagem.'
-}
 
 export default function RoteiroPage() {
   const roteiros = [
