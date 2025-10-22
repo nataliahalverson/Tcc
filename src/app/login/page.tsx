@@ -1,4 +1,5 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { LogIn, Mail, Lock } from 'lucide-react'
@@ -7,11 +8,6 @@ import Footer from '@/components/Footer'
 import Button from '@/components/Button'
 import Input from '@/components/Input'
 import Card from '@/components/Card'
-
-export const metadata: Metadata = {
-  title: 'Login — Viagem de Formatura',
-  description: 'Acesse sua conta na FORMA+',
-}
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },

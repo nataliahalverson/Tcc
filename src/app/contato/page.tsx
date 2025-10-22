@@ -1,13 +1,9 @@
-import type { Metadata } from 'next'
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Form } from '@/components/Form'
 import styles from './page.module.css'
-
-export const metadata: Metadata = {
-  title: 'Contato — Viagem de Formatura',
-  description: 'Entre em contato conosco para tirar suas dúvidas'
-}
 
 export default function ContatoPage() {
   const handleContact = async (data: Record<string, string>) => {
