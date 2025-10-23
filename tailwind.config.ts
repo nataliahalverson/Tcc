@@ -47,8 +47,8 @@ const config: Config = {
         },
       },
       backgroundImage: {
-        'gradient-hero': 'linear-gradient(135deg, #0ea5e9 0%, #0369a1 50%, #ec4899 100%)',
-        'gradient-card': 'linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)',
+        'gradient-hero': 'linear-gradient(135deg, #0f172a 0%, #0e7490 52%, #c026d3 100%)',
+        'gradient-card': 'linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(236, 72, 153, 0.12) 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in',

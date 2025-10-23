@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import React from 'react'
 import clsx from 'clsx'
 
@@ -8,23 +9,31 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   interactive?: boolean
   gradient?: boolean
   border?: boolean
+  href?: string
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
-  ({ className, children, interactive = false, gradient = false, border = false, ...props }, ref) => {
+  ({ className, children, interactive = false, gradient = false, border = false, href, tabIndex, ...props }, ref) => {
+    const baseClass = clsx(
+      'group relative block rounded-2xl border border-transparent bg-white/80 p-6 shadow-soft transition-all duration-300 focus-ring',
+      interactive && 'hover:shadow-medium hover:-translate-y-1 cursor-pointer',
+      gradient && 'bg-gradient-to-br from-white to-slate-50',
+      border && 'border-slate-100 bg-white',
+      className
+    )
+
+    if (href) {
+      return (
+        <Link href={href} className={baseClass} {...(props as Record<string, unknown>)}>
+          {children}
+        </Link>
+      )
+    }
+
+    const resolvedTabIndex = tabIndex ?? (interactive ? 0 : undefined)
+
     return (
-      <div
-        ref={ref}
-        className={clsx(
-          'bg-white rounded-xl shadow-soft p-6',
-          interactive && 'hover:shadow-medium transition-all duration-300 hover:translate-y-[-4px] cursor-pointer',
-          gradient && 'bg-gradient-to-br from-white to-slate-50',
-          border && 'border border-slate-100',
-          !interactive && 'transition-all duration-300',
-          className
-        )}
-        {...props}
-      >
+      <div ref={ref} className={baseClass} tabIndex={resolvedTabIndex} {...props}>
         {children}
       </div>
     )
