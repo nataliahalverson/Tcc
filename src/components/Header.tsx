@@ -2,11 +2,22 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 import Button from './Button'
+import UserMenu from './UserMenu'
+import MobileUserMenu from './MobileUserMenu'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
 
   const navLinks = [
     { href: '/', label: 'Home' },
@@ -16,8 +27,24 @@ export default function Header() {
     { href: '/contato', label: 'Contato' },
   ]
 
+  const navLinkClass =
+    'focus-ring px-3 py-2 text-sm font-medium text-slate-700 hover:text-primary-500 hover:bg-slate-50 transition-all duration-200 rounded-lg'
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-soft border-b border-slate-100">
+    <>
+      <a
+        href="#conteudo"
+        className="skip-link"
+        onClick={() => {
+          const target = document.getElementById('conteudo')
+          if (target) {
+            target.focus()
+          }
+        }}
+      >
+        Ir para o conteúdo
+      </a>
+      <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur-sm shadow-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -29,64 +56,58 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-slate-700 font-medium hover:text-primary-500 hover:bg-slate-50 rounded-lg transition-all duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+          <nav className="hidden md:block" aria-label="Navegação principal">
+            <ul className="flex gap-2">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={navLinkClass}
+                    aria-current={isActive(link.href) ? 'page' : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
 
           {/* Desktop Auth Buttons */}
-          <div className="hidden md:flex gap-2">
-            <Button variant="ghost" size="md">
-              <Link href="/login">Login</Link>
-            </Button>
-            <Button variant="primary" size="md">
-              <Link href="/registro">Registrar</Link>
-            </Button>
-          </div>
+          <UserMenu />
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors"
+          <Button
+            variant="icon"
+            size="icon"
+            className="md:hidden focus-ring"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label="Alternar menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {isOpen ? <X size={22} /> : <Menu size={22} />}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden pb-4 border-t border-slate-100 animate-slideDown">
-            <nav className="flex flex-col gap-2 pt-4">
+            <nav className="flex flex-col gap-2 pt-4" aria-label="Navegação principal móvel">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-slate-700 font-medium hover:text-primary-500 hover:bg-slate-50 rounded-lg transition-all duration-200"
+                  className={`${navLinkClass} mx-2`}
+                  aria-current={isActive(link.href) ? 'page' : undefined}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex gap-2 pt-2">
-                <Button variant="ghost" size="md" fullWidth>
-                  <Link href="/login">Login</Link>
-                </Button>
-                <Button variant="primary" size="md" fullWidth>
-                  <Link href="/registro">Registrar</Link>
-                </Button>
-              </div>
+              <MobileUserMenu />
             </nav>
           </div>
         )}
       </div>
-    </header>
+      </header>
+    </>
   )
 }
